@@ -3,6 +3,10 @@ import { http } from "viem";
 import { erc721ABI } from "./abis/erc721ABI";
 
 export default createConfig({
+  database: {
+    kind: "postgres",
+    publishSchema: "public",
+  },
   networks: {
     arbitrum: {
       chainId: 42161,
