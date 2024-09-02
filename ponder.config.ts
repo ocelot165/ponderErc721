@@ -5,6 +5,7 @@ import { erc721ABI } from "./abis/erc721ABI";
 export default createConfig({
   database: {
     kind: "postgres",
+    schema: "ponderSchema",
     publishSchema: "public",
   },
   networks: {
