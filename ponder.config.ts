@@ -3,11 +3,13 @@ import { http } from "viem";
 import { erc721ABI } from "./abis/erc721ABI";
 
 export default createConfig({
-  database: {
-    kind: "postgres",
-    schema: "ponderSchema",
-    publishSchema: "public",
-  },
+  database: process.env.IS_DEV
+    ? undefined
+    : {
+        kind: "postgres",
+        schema: "ponderSchema",
+        publishSchema: "public",
+      },
   networks: {
     arbitrum: {
       chainId: 42161,
