@@ -10,6 +10,9 @@ export default createConfig({
         schema: "ponderSchema",
         publishSchema: "public",
       },
+  options: {
+    maxHealthcheckDuration: 0,
+  },
   networks: {
     arbitrum: {
       chainId: 42161,
