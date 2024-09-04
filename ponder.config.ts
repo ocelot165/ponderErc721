@@ -7,11 +7,11 @@ export default createConfig({
     ? undefined
     : {
         kind: "postgres",
-        schema: "ponderSchema",
-        publishSchema: "public",
+        schema: process.env.SCHEMA,
+        publishSchema: process.env.PUBLIC_SCHEMA,
       },
   options: {
-    maxHealthcheckDuration: 0,
+    maxHealthcheckDuration: 10,
   },
   networks: {
     arbitrum: {
