@@ -1,9 +1,11 @@
 import { ponder } from "@/generated";
 import { graphql } from "@ponder/core";
 
-ponder.use("/", graphql());
-ponder.use("/graphql", graphql());
+const app = ponder.hono.basePath(process.env.BASE_PATH!);
 
-ponder.get("/readiness", (c) => {
+app.use("/", graphql());
+app.use("/graphql", graphql());
+
+app.get("/readiness", (c) => {
   return c.text("Ready");
 });
